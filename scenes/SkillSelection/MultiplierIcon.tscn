@@ -1,0 +1,82 @@
+[gd_scene load_steps=10 format=3 uid="uid://dalxwam25cnca"]
+
+[ext_resource type="Texture2D" uid="uid://cqu14y1ljn0rp" path="res://scenes/Cell/base_on.png" id="1_luejl"]
+[ext_resource type="Script" uid="uid://cb8htagjsd4ye" path="res://scenes/SkillSelection/multiplier_icon.gd" id="1_yiudv"]
+[ext_resource type="FontFile" uid="uid://c775gxt4sgkgw" path="res://assets/Comfortaa-VariableFont_wght.ttf" id="2_e8qh5"]
+[ext_resource type="Script" uid="uid://cufajqgms5bpm" path="res://scenes/SkillSelection/multiplier_icon_on.gd" id="2_yiudv"]
+[ext_resource type="Texture2D" uid="uid://uk1ldxkm14dw" path="res://scenes/Cell/base_off.png" id="3_yiudv"]
+[ext_resource type="Shader" uid="uid://4ai84quu5sfl" path="res://scenes/SkillSelection/masking.gdshader" id="4_ve62p"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_luejl"]
+font = ExtResource("2_e8qh5")
+font_size = 64
+font_color = Color(1, 0.8389701, 0.7528677, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ve62p"]
+shader = ExtResource("4_ve62p")
+shader_parameter/position = Vector2(-1, 0.5)
+shader_parameter/radius = 1.455
+
+[sub_resource type="LabelSettings" id="LabelSettings_ve62p"]
+font = ExtResource("2_e8qh5")
+font_size = 64
+font_color = Color(0.14509805, 0.15686275, 0.1764706, 1)
+
+[node name="MultiplierIcon" type="Control"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yiudv")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+use_top_left = true
+
+[node name="Off" type="Control" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="BackOff" type="Sprite2D" parent="CenterContainer/Off"]
+texture = ExtResource("3_yiudv")
+
+[node name="MultiplierLabel" type="Label" parent="CenterContainer/Off"]
+layout_mode = 0
+offset_left = -36.0
+offset_top = -36.0
+offset_right = 36.0
+offset_bottom = 36.0
+text = "x2"
+label_settings = SubResource("LabelSettings_luejl")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="On" type="CanvasGroup" parent="CenterContainer"]
+clip_children = 1
+material = SubResource("ShaderMaterial_ve62p")
+script = ExtResource("2_yiudv")
+
+[node name="BackOn" type="Sprite2D" parent="CenterContainer/On"]
+texture = ExtResource("1_luejl")
+
+[node name="MultiplierLabel" type="Label" parent="CenterContainer/On"]
+offset_left = -36.0
+offset_top = -36.0
+offset_right = 36.0
+offset_bottom = 36.0
+text = "x2"
+label_settings = SubResource("LabelSettings_ve62p")
+horizontal_alignment = 1
+vertical_alignment = 1

@@ -1,0 +1,81 @@
+[gd_scene load_steps=6 format=3 uid="uid://duf0y3615yqj8"]
+
+[ext_resource type="Shader" uid="uid://c3kt5v8vfofgi" path="res://test_rect.gdshader" id="1_vfipl"]
+[ext_resource type="Script" uid="uid://dlpg7k1f5bl47" path="res://test_rect.gd" id="2_ecc3x"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ecc3x"]
+shader = ExtResource("1_vfipl")
+shader_parameter/col = Color(0.7517415, 0.37603155, 0, 1)
+shader_parameter/position = Vector2(0.5, 0.5)
+shader_parameter/radius = 0.5
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lt0m0"]
+shader = ExtResource("1_vfipl")
+shader_parameter/col = Color(0.7332214, 0.00088926376, 0.81219155, 1)
+shader_parameter/position = Vector2(0.5, 0.5)
+shader_parameter/radius = 0.21
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cug4f"]
+shader = ExtResource("1_vfipl")
+shader_parameter/col = Color(0, 0.5990974, 0.14125347, 1)
+shader_parameter/position = Vector2(0.5, 0.5)
+shader_parameter/radius = 0.5
+
+[node name="TestRect" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 160.0
+offset_top = 411.0
+offset_right = 160.0
+offset_bottom = 411.0
+
+[node name="BackBufferCopy" type="BackBufferCopy" parent="."]
+copy_mode = 2
+
+[node name="CanvasGroup" type="CanvasGroup" parent="BackBufferCopy"]
+material = SubResource("ShaderMaterial_ecc3x")
+use_parent_material = true
+script = ExtResource("2_ecc3x")
+duration = 1.2
+
+[node name="ColorRect" type="ColorRect" parent="BackBufferCopy/CanvasGroup"]
+custom_minimum_size = Vector2(700, 700)
+offset_left = -150.0
+offset_top = -150.0
+offset_right = 550.0
+offset_bottom = 550.0
+
+[node name="BackBufferCopy" type="BackBufferCopy" parent="BackBufferCopy/CanvasGroup"]
+copy_mode = 2
+
+[node name="CanvasGroup2" type="CanvasGroup" parent="BackBufferCopy/CanvasGroup/BackBufferCopy"]
+material = SubResource("ShaderMaterial_lt0m0")
+position = Vector2(-150, -150)
+script = ExtResource("2_ecc3x")
+duration = 2.1
+
+[node name="ColorRect" type="ColorRect" parent="BackBufferCopy/CanvasGroup/BackBufferCopy/CanvasGroup2"]
+custom_minimum_size = Vector2(500, 500)
+offset_left = 100.0
+offset_top = 100.0
+offset_right = 600.0
+offset_bottom = 600.0
+
+[node name="BackBufferCopy" type="BackBufferCopy" parent="BackBufferCopy/CanvasGroup/BackBufferCopy/CanvasGroup2"]
+copy_mode = 2
+
+[node name="CanvasGroup3" type="CanvasGroup" parent="BackBufferCopy/CanvasGroup/BackBufferCopy/CanvasGroup2/BackBufferCopy"]
+material = SubResource("ShaderMaterial_cug4f")
+position = Vector2(100, 100)
+script = ExtResource("2_ecc3x")
+duration = 2.9
+
+[node name="ColorRect" type="ColorRect" parent="BackBufferCopy/CanvasGroup/BackBufferCopy/CanvasGroup2/BackBufferCopy/CanvasGroup3"]
+custom_minimum_size = Vector2(300, 300)
+offset_left = 100.0
+offset_top = 100.0
+offset_right = 400.0
+offset_bottom = 400.0
+
+[node name="BackBufferCopy" type="BackBufferCopy" parent="BackBufferCopy/CanvasGroup/BackBufferCopy/CanvasGroup2/BackBufferCopy/CanvasGroup3"]
+copy_mode = 2

@@ -1,0 +1,57 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="light on"
+run/main_scene="uid://baary6ygm2xno"
+config/features=PackedStringArray("4.5", "GL Compatibility")
+config/icon="res://icon.svg"
+
+[autoload]
+
+Constants="*res://autoload/Constants.gd"
+Skills="*res://autoload/Skills.gd"
+State="*res://autoload/State.tscn"
+
+[debug]
+
+settings/gdscript/always_track_local_variables=true
+gdscript/warnings/untyped_declaration=2
+
+[display]
+
+window/size/viewport_width=720
+window/size/viewport_height=1280
+window/stretch/mode="canvas_items"
+window/handheld/orientation=1
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/script-ide/plugin.cfg")
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/import_etc2_astc=true
+environment/defaults/default_clear_color=Color(0.14509805, 0.15686275, 0.1764706, 1)
+anti_aliasing/quality/use_debanding=true
+
+[shader_globals]
+
+color1={
+"type": "vec4",
+"value": Vector4(0, 0, 0, 0)
+}
+color2={
+"type": "vec4",
+"value": Vector4(0, 0, 0, 0)
+}

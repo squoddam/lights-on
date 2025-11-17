@@ -1,0 +1,65 @@
+[gd_scene load_steps=6 format=3 uid="uid://dqwdj4ufca8p1"]
+
+[ext_resource type="Script" uid="uid://d2fk8sr486sgk" path="res://scenes/SkillSelection/skill_selection.gd" id="1_425m0"]
+[ext_resource type="FontFile" uid="uid://c775gxt4sgkgw" path="res://assets/Comfortaa-VariableFont_wght.ttf" id="2_2xefp"]
+[ext_resource type="Script" uid="uid://byurhmgccqki4" path="res://scenes/SkillSelection/skill_selection_background.gd" id="3_5bbfi"]
+[ext_resource type="Script" uid="uid://c4j2o51ol1x8s" path="res://scenes/SkillSelection/backdrop.gd" id="4_pcpms"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_5bbfi"]
+font = ExtResource("2_2xefp")
+font_size = 64
+font_color = Color(1, 0.8389701, 0.7528677, 1)
+
+[node name="SkillSelection" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_425m0")
+
+[node name="Background" type="Control" parent="."]
+clip_children = 1
+custom_minimum_size = Vector2(720, 1280)
+layout_mode = 1
+anchors_preset = 0
+offset_right = 720.0
+offset_bottom = 1280.0
+script = ExtResource("3_5bbfi")
+
+[node name="Backdrop" type="ColorRect" parent="Background"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("4_pcpms")
+
+[node name="RoundLabel" type="Label" parent="Background"]
+layout_mode = 0
+offset_right = 258.0
+offset_bottom = 72.0
+text = "round 2"
+label_settings = SubResource("LabelSettings_5bbfi")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LabelTopPlace" type="Node2D" parent="Background"]
+position = Vector2(360, 120)
+
+[node name="SkillsContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+use_top_left = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SkillsContainer"]
+layout_mode = 2
+theme_override_constants/separation = 64

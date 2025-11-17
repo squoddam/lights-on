@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://c5snp8t12856c"]
+
+[ext_resource type="Shader" uid="uid://dwbo5muaxqhui" path="res://scenes/InvertedDrop/InvertedDrop.gdshader" id="1_n3s18"]
+[ext_resource type="Script" uid="uid://uephaui47m2j" path="res://scenes/InvertedDrop/inverted_drop.gd" id="2_xldu5"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xldu5"]
+shader = ExtResource("1_n3s18")
+shader_parameter/position = Vector2(0, 0)
+shader_parameter/radius = 3.0
+
+[node name="InvertedDrop" type="CanvasGroup"]
+material = SubResource("ShaderMaterial_xldu5")
+script = ExtResource("2_xldu5")

@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://d37mkxohcwebg"]
+
+[ext_resource type="Script" uid="uid://bc4m6bc1fmkxe" path="res://scenes/SkillSelection/skill_icon.gd" id="1_bi4hv"]
+[ext_resource type="PackedScene" uid="uid://dalxwam25cnca" path="res://scenes/SkillSelection/MultiplierIcon.tscn" id="2_prfh1"]
+[ext_resource type="PackedScene" uid="uid://com12slfju1as" path="res://scenes/SkillSelection/DirectionIcon.tscn" id="3_fxk61"]
+
+[node name="SkillIcon" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_bi4hv")
+
+[node name="DirectionIcon" parent="." instance=ExtResource("3_fxk61")]
+visible = false
+layout_mode = 1
+mouse_filter = 2
+
+[node name="MultiplierIcon" parent="." instance=ExtResource("2_prfh1")]
+visible = false
+layout_mode = 1
+mouse_filter = 2

@@ -1,0 +1,81 @@
+[gd_scene load_steps=7 format=3 uid="uid://buyjqshpv4ot"]
+
+[ext_resource type="Script" uid="uid://s0fnmaprj6hw" path="res://scenes/GameOver/game_over.gd" id="1_ppu1c"]
+[ext_resource type="PackedScene" uid="uid://buuckfpupoxsu" path="res://scenes/InteractibleLabel/InteractibleLabel.tscn" id="1_xhtoj"]
+[ext_resource type="FontFile" uid="uid://c775gxt4sgkgw" path="res://assets/Comfortaa-VariableFont_wght.ttf" id="2_1kqld"]
+[ext_resource type="LabelSettings" uid="uid://cs5qop8eutete" path="res://assets/label_style.tres" id="2_51nbm"]
+
+[sub_resource type="GDScript" id="GDScript_le3ma"]
+script/source = "extends LabelSettings
+
+func _ready() -> void:
+	font_color = Color.BLACK
+"
+
+[sub_resource type="LabelSettings" id="LabelSettings_3nl22"]
+font = ExtResource("2_1kqld")
+font_size = 64
+shadow_size = 10
+shadow_color = Color(0, 0, 0, 0.1764706)
+shadow_offset = Vector2(4.5, 4.5)
+script = SubResource("GDScript_le3ma")
+
+[node name="GameOver" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ppu1c")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.7137255)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -210.0
+offset_top = -105.0
+offset_right = 210.0
+offset_bottom = 105.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 90
+alignment = 1
+
+[node name="GameOverTitle" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Game Over"
+label_settings = SubResource("LabelSettings_3nl22")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 80
+alignment = 1
+
+[node name="Round" type="Label" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Round: 1"
+label_settings = ExtResource("2_51nbm")
+
+[node name="Score" type="Label" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Score: 100"
+label_settings = ExtResource("2_51nbm")
+
+[node name="InteractibleLabel" parent="VBoxContainer" instance=ExtResource("1_xhtoj")]
+layout_mode = 2
+text = "Restart"

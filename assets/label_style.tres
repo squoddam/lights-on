@@ -1,0 +1,16 @@
+[gd_resource type="LabelSettings" load_steps=3 format=3 uid="uid://cs5qop8eutete"]
+
+[ext_resource type="FontFile" uid="uid://c775gxt4sgkgw" path="res://assets/Comfortaa-VariableFont_wght.ttf" id="1_bnqvf"]
+
+[sub_resource type="GDScript" id="GDScript_le3ma"]
+script/source = "extends LabelSettings
+
+func _ready() -> void:
+	font_color = Color.BLACK
+"
+
+[resource]
+font = ExtResource("1_bnqvf")
+font_size = 36
+font_color = Color(1, 0.8389701, 0.7528677, 0.6)
+script = SubResource("GDScript_le3ma")
