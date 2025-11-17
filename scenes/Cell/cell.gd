@@ -63,6 +63,7 @@ func handle_press_cell(tick_data: Array, chain_index: int = 0) -> void:
 
 		is_tweening = true
 
+		on_state.visible = true
 		on_state.animate(chain_index, tick_data[0], func() -> void: is_tweening = false)
 
 @warning_ignore("unused_parameter")

@@ -52,6 +52,7 @@ scale = Vector2(0.25, 0.25)
 texture = ExtResource("2_xpris")
 
 [node name="on" type="Node2D" parent="."]
+visible = false
 clip_children = 1
 script = ExtResource("4_oo31k")
 

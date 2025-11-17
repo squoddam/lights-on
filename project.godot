@@ -13,6 +13,9 @@ config_version=5
 config/name="light on"
 run/main_scene="uid://baary6ygm2xno"
 config/features=PackedStringArray("4.5", "GL Compatibility")
+boot_splash/bg_color=Color(0.14509805, 0.15686275, 0.1764706, 1)
+boot_splash/show_image=false
+boot_splash/fullsize=false
 config/icon="res://icon.svg"
 
 [autoload]
