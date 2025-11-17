@@ -7,7 +7,7 @@ var ASSET_BASE: int = 256
 var BOARD_WIDTH_RATIO: float = 0.9
 var BOARD_SIZE: float = WINDOW_SIZE.x * BOARD_WIDTH_RATIO
 
-var BOARD_CELLS_SIZE: int = 7
+var BOARD_CELLS_SIZE: int = 5
 
 #var CELL_SIZE: float = ASSET_BASE * ASSET_SCALE
 var GAP: int = 5
